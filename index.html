@@ -17,8 +17,23 @@
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
+
+            if (id === "header") {
+                const btn1 = document.getElementById("header").children[0].children[2].children[0]
+                const btn2 = btn.nextElementSibling
+                const links = btn2.nextElementSibling
+                btn1.addEventListener('click', () => {
+                    console.log("btn 1")
+                })
+
+                btn2.addEventListener('click', () => {
+                    
+                })
+            }
         });
     }
+
+    // console.log(document.getElementById('open-menu'))
 
     window.onload = () => {
         loadComponents('header', 'src/sections/header.html');
