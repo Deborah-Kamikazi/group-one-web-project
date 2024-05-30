@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/dist/output.css">
-    <title>Ojemba</title>
+    <title>Group 1 - Website Project</title>
 
     <!-- Google Font - Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,21 +17,66 @@
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
+
+            if (id === "header" || id === "greenHeader") {
+                const headerContent = id === "header" ? document.getElementById("header") : document.getElementById("greenHeader")
+                const links = headerContent.children[1]
+                const showMenuBtn = headerContent.children[0].children[2].children[0]
+                const removeMenuBtn = showMenuBtn.nextElementSibling
+
+                function handleResize() {
+                    if (window.innerWidth >= 1024) {
+                        // From lg: screen size and beyond, ensure the mobile menu is hidden
+                        showMenuBtn.classList.add('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        links.classList.add('hidden');
+                    } else {
+                        // Up to lg: screen size
+                        showMenuBtn.classList.remove('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        links.classList.add('hidden');
+                    }
+                }
+
+                handleResize(); // Initial check
+
+                window.addEventListener('resize', handleResize);
+
+                showMenuBtn.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        links.classList.remove('hidden');
+                        showMenuBtn.classList.add('hidden');
+                        removeMenuBtn.classList.remove('hidden');
+                    }
+                });
+
+                removeMenuBtn.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        links.classList.add('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        showMenuBtn.classList.remove('hidden');
+                    }
+                });
+            }
         });
     }
 
+    // console.log(document.getElementById('open-menu'))
+
     window.onload = () => {
         loadComponents('header', 'src/sections/header.html');
+        loadComponents('greenHeader', 'src/sections/greenHeader.html');
         loadComponents('hero', 'src/sections/hero.html');
         loadComponents('contact', 'src/sections/contact.html');
         loadComponents('footer', 'src/sections/footer.html');
     }
 </script>
-<body class="bg-webGrey">
+<body>
     <div id="header"></div>
+    <!-- <div id="greenHeader"></div> -->
     <!-- <div id="hero"></div>
     <div id="contact"></div>
     <div id="footer"></div> -->
-    
+
 </body>
 </html>
