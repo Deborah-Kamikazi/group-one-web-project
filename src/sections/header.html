@@ -1,15 +1,15 @@
-<header class="fixed z-40 flex items-center justify-between w-full px-3 pt-4 lg:px-8">
+<header class="fixed z-40 flex items-center justify-between w-full px-3 pt-4 bg-white lg:px-8">
     <div>
-        <P>DE</P>
-        <P>EN</P>
+        <p>DE</p>
+        <p>EN</p>
     </div>
     <div class="relative flex items-center justify-center flex-grow">
         <img src="images/white-vector-shape.svg" class="absolute w-full h-full lg:hidden">
-        <h1 class="relative text-2xl font-bold lg:text-4xl lg:top-0 lg:left">Baumeister</h1>
+        <h1 class="relative text-2xl font-bold lg:text-4xl lg:top-0">Baumeister</h1>
     </div>
     <nav>
-        <img src="images/menu-icon.svg" id="open-menu"  class="lg:hidden">
-        <img src="images/remove-menu-icon.svg" id="close-menu"  class="hidden lg:hidden">
+        <img src="images/menu-icon.svg" id="open-menu" class="cursor-pointer lg:hidden">
+        <img src="images/remove-menu-icon.svg" id="close-menu" class="hidden cursor-pointer lg:hidden">
         <div class="hidden lg:block">
             <ul class="flex flex-col items-end">
                 <li><a href="#">About</a></li>
@@ -21,9 +21,8 @@
     </nav>
 </header>
 
-
-<div class="absolute flex-col items-center justify-center hidden w-full mt-40 bg-white lg:hidden">
-    <ul class="flex flex-col items-center gap-10">
+<div id="mobile-menu" class="absolute hidden w-full mt-40 bg-white lg:hidden">
+    <ul class="flex flex-col items-center gap-10 text-webGreen">
         <li><a class="text-3xl font-semibold" href="#">About</a></li>
         <li><a class="text-3xl font-semibold" href="#">Services</a></li>
         <li><a class="text-3xl font-semibold" href="#">References</a></li>

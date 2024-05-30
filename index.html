@@ -18,23 +18,45 @@
         .then((html) => {
             document.getElementById(id).innerHTML = html;
 
-            if (id === "header") {
-                const headerContent = document.getElementById("header")
+            if (id === "header" || id === "greenHeader") {
+                const headerContent = id === "header" ? document.getElementById("header") : document.getElementById("greenHeader")
                 const links = headerContent.children[1]
                 const showMenuBtn = headerContent.children[0].children[2].children[0]
                 const removeMenuBtn = showMenuBtn.nextElementSibling
-                showMenuBtn.addEventListener('click', (event) => {
-                    links.style.display = "block"
-                    event.target.style.display = "none"
-                    removeMenuBtn.style.display = "block"
-                    
-                })
 
-                removeMenuBtn.addEventListener('click', (event) => {
-                    links.style.display = "none"
-                    event.target.style.display = "none"
-                    showMenuBtn.style.display = "block"
-                })
+                function handleResize() {
+                    if (window.innerWidth >= 1024) {
+                        // From lg: screen size and beyond, ensure the mobile menu is hidden
+                        showMenuBtn.classList.add('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        links.classList.add('hidden');
+                    } else {
+                        // Up to lg: screen size
+                        showMenuBtn.classList.remove('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        links.classList.add('hidden');
+                    }
+                }
+
+                handleResize(); // Initial check
+
+                window.addEventListener('resize', handleResize);
+
+                showMenuBtn.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        links.classList.remove('hidden');
+                        showMenuBtn.classList.add('hidden');
+                        removeMenuBtn.classList.remove('hidden');
+                    }
+                });
+
+                removeMenuBtn.addEventListener('click', () => {
+                    if (window.innerWidth <= 1024) {
+                        links.classList.add('hidden');
+                        removeMenuBtn.classList.add('hidden');
+                        showMenuBtn.classList.remove('hidden');
+                    }
+                });
             }
         });
     }

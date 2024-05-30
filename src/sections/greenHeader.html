@@ -8,14 +8,25 @@
         <h1 class="relative text-2xl font-bold lg:text-4xl lg:top-0 lg:left text-webGreen">Baumeister</h1>
     </div>
     <nav>
-        <img src="images/menu-icon.svg" class="lg:hidden">
-       <div class="hidden lg:block">
-        <ul class="flex flex-col items-end">
-            <li><a class="text-webGreen" href="#">About</a></li>
-            <li><a class="text-webGreen" href="#">Services</a></li>
-            <li><a class="text-webGreen" href="#">References</a></li>
-            <li><a class="text-webGreen" href="#">Contact</a></li>
-        </ul>
-       </div>
+        <img src="images/menu-icon.svg" id="open-menu" class="cursor-pointer lg:hidden">
+        <img src="images/remove-menu-icon.svg" id="close-menu" class="hidden cursor-pointer lg:hidden">
+        <div class="hidden lg:block">
+            <ul class="flex flex-col items-end text-webGreen">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">References</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 </header>
+
+
+<div id="mobile-menu" class="absolute hidden w-full mt-40 bg-white lg:hidden">
+    <ul class="flex flex-col items-center gap-10 text-webGreen">
+        <li><a class="text-3xl font-semibold" href="#">About</a></li>
+        <li><a class="text-3xl font-semibold" href="#">Services</a></li>
+        <li><a class="text-3xl font-semibold" href="#">References</a></li>
+        <li><a class="text-3xl font-semibold" href="#">Contact</a></li>
+    </ul>
+</div>
