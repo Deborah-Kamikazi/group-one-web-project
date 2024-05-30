@@ -19,15 +19,21 @@
             document.getElementById(id).innerHTML = html;
 
             if (id === "header") {
-                const btn1 = document.getElementById("header").children[0].children[2].children[0]
-                const btn2 = btn1.nextElementSibling
-                const links = btn2.nextElementSibling
-                btn1.addEventListener('click', () => {
-                    console.log("btn 1" + btn1)
+                const headerContent = document.getElementById("header")
+                const links = headerContent.children[1]
+                const showMenuBtn = headerContent.children[0].children[2].children[0]
+                const removeMenuBtn = showMenuBtn.nextElementSibling
+                showMenuBtn.addEventListener('click', (event) => {
+                    links.style.display = "block"
+                    event.target.style.display = "none"
+                    removeMenuBtn.style.display = "block"
+                    
                 })
 
-                btn2.addEventListener('click', () => {
-                    console.log("btn 2" + btn2)
+                removeMenuBtn.addEventListener('click', (event) => {
+                    links.style.display = "none"
+                    event.target.style.display = "none"
+                    showMenuBtn.style.display = "block"
                 })
             }
         });
