@@ -7,13 +7,16 @@
     <title>Group 1 - Website Project</title>
 
     <!-- Google Font - Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<script>
-    const loadComponents = (id, url) =>  {
-        fetch(url)
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
         .then((response) => response.text())
         .then((html) => {
             document.getElementById(id).innerHTML = html;
@@ -59,24 +62,21 @@
                 });
             }
         });
-    }
+    };
 
     // console.log(document.getElementById('open-menu'))
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('greenHeader', 'src/sections/greenHeader.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
-        loadComponents('footer', 'src/sections/footer.html');
-    }
-</script>
-<body>
+      loadComponents("header", "src/sections/header.html");
+      loadComponents("hero", "src/sections/hero.html");
+      loadComponents("contact", "src/sections/contact.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body class="bg-webGrey">
     <div id="header"></div>
-    <!-- <div id="greenHeader"></div> -->
-    <!-- <div id="hero"></div>
-    <div id="contact"></div>
-    <div id="footer"></div> -->
-
-</body>
+    <!--     <div id="hero"></div>
+    <div id="contact"></div> -->
+    <div id="footer"></div>
+  </body>
 </html>
