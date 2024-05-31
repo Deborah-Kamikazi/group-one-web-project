@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Imprint</title>
+
+    <!-- Google Font - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+
+          if (id === "header" || id === "greenHeader") {
+            const headerContent =
+              id === "header"
+                ? document.getElementById("header")
+                : document.getElementById("greenHeader");
+            const links = headerContent.children[1];
+            const showMenuBtn =
+              headerContent.children[0].children[2].children[0];
+            const removeMenuBtn = showMenuBtn.nextElementSibling;
+
+            function handleResize() {
+              if (window.innerWidth >= 1024) {
+                // From lg: screen size and beyond, ensure the mobile menu is hidden
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              } else {
+                // Up to lg: screen size
+                showMenuBtn.classList.remove("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              }
+            }
+
+            handleResize(); // Initial check
+
+            window.addEventListener("resize", handleResize);
+
+            showMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.remove("hidden");
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.remove("hidden");
+              }
+            });
+
+            removeMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                showMenuBtn.classList.remove("hidden");
+              }
+            });
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("greenHeader", "src/sections/greenHeader.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body>
+    <div id="greenHeader"></div>
+    <div class="grid grid-cols-1 py-40 ">
+      <div class="text-webGreen flex flex-col gap-10">
+        <address class="">
+          <p>IMPRINT</p>
+          <h2>Agentur Baumeister</h2>
+          <h2>Katrein Baumeister</h2>
+          <h2>Böckhstraße 13</h2>
+          <h2>10967 Berlin</h2>
+        </address>
+        <div>
+          <h2>+49 (0)30 - 490 827 87</h2>
+          <h2>hallo@agentur-baumeister.com</h2>
+        </div>
+        <div>
+          <h2>UST-IDNR.</h2>
+          <h2>DE 274 486 923</h2>
+        </div>
+        <div>
+          <h2>REGISTERED OFFICE</h2>
+          <h2>Berlin, Deutschland</h2>
+        </div>
+      </div>
+      <div class="text-webGreen">
+        <p>DISCLAIMER</p>
+        <p>
+          Despite all due care, no liability can be accepted for the accuracy,
+          completeness and up to-dateness of the information provided. The same
+          applies to third-party websites to which www.agentur-baumeister.com
+          refers by means of hyperlinks. Katrein Baumeister, Agentur Baumeister
+          accepts no liability for the content of these websites.
+        </p>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </body>
+</html>
