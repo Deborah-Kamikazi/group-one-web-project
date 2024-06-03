@@ -29,19 +29,17 @@
 
                 function handleResize() {
                     if (window.innerWidth >= 1024) {
-                        // From lg: screen size and beyond, ensure the mobile menu is hidden
                         showMenuBtn.classList.add('hidden');
                         removeMenuBtn.classList.add('hidden');
                         links.classList.add('hidden');
                     } else {
-                        // Up to lg: screen size
                         showMenuBtn.classList.remove('hidden');
                         removeMenuBtn.classList.add('hidden');
                         links.classList.add('hidden');
                     }
                 }
 
-                handleResize(); // Initial check
+                handleResize(); 
 
                 window.addEventListener('resize', handleResize);
 
@@ -63,20 +61,23 @@
             }
         });
     };
-
-    // console.log(document.getElementById('open-menu'))
-
     window.onload = () => {
       loadComponents("header", "src/sections/header.html");
       loadComponents("hero", "src/sections/hero.html");
       loadComponents("contact", "src/sections/contact.html");
+      loadComponents("about", "src/sections/about.html");
+      loadComponents("strategy", "src/sections/strategy.html");
       loadComponents("footer", "src/sections/footer.html");
+
     };
   </script>
   <body class="bg-webGrey">
     <div id="header"></div>
     <div id="hero"></div>
+    <div id="about"></div>
     <!-- <div id="contact"></div> -->
+    <div id="strategy"></div>
     <div id="footer"></div>
+    
   </body>
 </html>
