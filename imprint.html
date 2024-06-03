@@ -21,11 +21,11 @@
         .then((html) => {
           document.getElementById(id).innerHTML = html;
 
-          if (id === "header" || id === "greenHeader") {
+          if (id === "header" || id === "greenNavbar") {
             const headerContent =
               id === "header"
                 ? document.getElementById("header")
-                : document.getElementById("greenHeader");
+                : document.getElementById("greenNavbar");
             const links = headerContent.children[1];
             const showMenuBtn =
               headerContent.children[0].children[2].children[0];
@@ -69,14 +69,14 @@
     };
 
     window.onload = () => {
-      loadComponents("greenHeader", "src/sections/greenHeader.html");
+      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
       loadComponents("footer", "src/sections/footer.html");
     };
   </script>
   <body>
-    <div id="greenHeader"></div>
+    <div id="greenNavbar"></div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-40 px-3 md:px-11 lg:px-28 gap-24 md:gap-x-8">
-      <div class="text-webGreen flex flex-col gap-10 md:gap-12 lg:col-span-2">
+      <div class="text-green-250 flex flex-col gap-10 md:gap-12 lg:col-span-2">
         <div>
           <p class="text-2xl md:text-xl font-bold ">IMPRINT</p>
           <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10 font-bold mt-6">Agentur Baumeister</h2>
@@ -97,7 +97,7 @@
           <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">Berlin, Deutschland</h2>
         </div>
       </div>
-      <div class="text-webGreen md:self-end md:w-[82%] lg:w-[18.4rem] md:ml-auto">
+      <div class="text-green-250 md:self-end md:w-[82%] lg:w-[18.4rem] md:ml-auto">
         <p class="text-2xl md:text-xl md:text-right font-bold">DISCLAIMER</p>
         <p class="text-2xl md:text-xl md:text-right mt-8 lg:leading-5">
           Despite all due care, no liability can be accepted for the accuracy,
@@ -108,6 +108,6 @@
         </p>
       </div>
     </div>
-    <footer id="footer" class="text-webGreen"></footer>
+    <footer id="footer" class="text-green-250"></footer>
   </body>
 </html>
