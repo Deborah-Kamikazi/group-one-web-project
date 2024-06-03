@@ -11,6 +11,12 @@ module.exports = {
         1.2: 1.2,
         2: 2,
       },
+
+      container:{
+        center: true,
+        padding: '1rem',
+        "max-width": '1440px',
+      }
     },
   },
   plugins: [],
