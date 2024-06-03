@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "webgreen-100": "#00672E",
-        "webgray-100": "#EFECEA",
+        "green-250": "#00672E",
+        "gray-150": "#EFECEA",
       },
       flexGrow: {
         1.2: 1.2,
