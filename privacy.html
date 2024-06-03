@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Group 1 - Website Project</title>
+
+    <!-- Google Font - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+
+          if (id === "greenNavbar") {
+            const headerContent = document.getElementById("greenNavbar");
+            const links = headerContent.children[1];
+            const showMenuBtn =
+              headerContent.children[0].children[2].children[0];
+            const removeMenuBtn = showMenuBtn.nextElementSibling;
+
+            function handleResize() {
+              if (window.innerWidth >= 1024) {
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              } else {
+                showMenuBtn.classList.remove("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              }
+            }
+
+            handleResize();
+
+            window.addEventListener("resize", handleResize);
+
+            showMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.remove("hidden");
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.remove("hidden");
+              }
+            });
+
+            removeMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                showMenuBtn.classList.remove("hidden");
+              }
+            });
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body class="bg-gray-150">
+    <div id="greenNavbar"></div>
+    <div class="px-32 pt-32 text-green-250">
+      <h1 class="font-medium">DATA PRIVACY</h1>
+      <h2 class="my-8">PRIVACY POLICY</h2>
+      <p>
+        We are very delighted that you have shown interest in our enterprise.
+        Data protection is of a particularly high priority for the management of
+        the Agentur Baumeister. The use of the Internet pages of the Agentur
+        Baumeister is possible without any indication of personal data; however,
+        if a data subject wants to use special enterprise services via our
+        website, processing of personal data could become necessary. If the
+        processing of personal data is necessary and there is no statutory basis
+        for such processing, we generally obtain consent from the data subject.
+        <br />
+        The processing of personal data, such as the name, address, e-mail
+        address, or telephone number of a data subject shall always be in line
+        with the General Data Protection Regulation (GDPR), and in accordance
+        with the country-specific data protection regulations applicable to the
+        Agentur Baumeister. By means of this data protection declaration, our
+        enterprise would like to inform the general public of the nature, scope,
+        and purpose of the personal data we collect, use and process.
+        Furthermore, data subjects are informed, by means of this data
+        protection declaration, of the rights to which they are entitled. <br />
+        As the controller, the Agentur Baumeister has implemented numerous
+        technical and organizational measures to ensure the most complete
+        protection of personal data processed through this website. However,
+        Internet-based data transmissions may in principle have security gaps,
+        so absolute protection may not be guaranteed. For this reason, every
+        data subject is free to transfer personal data to us via alternative
+        means, e.g. by telephone.
+      </p>
+    </div>
+    <div id="footer" class="text-green-250"></div>
+  </body>
+</html>
