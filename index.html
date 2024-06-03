@@ -36,7 +36,7 @@
                     }
                 }
 
-                handleResize();
+                handleResize(); 
 
                 window.addEventListener('resize', handleResize);
 
@@ -57,21 +57,22 @@
                 });
             }
         });
-    }
+    };
+
     window.onload = () => {
-        loadComponents('navbar', 'src/sections/navbar.html');
-        loadComponents('greenNavbar', 'src/sections/greenNavbar.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
-        loadComponents('footer', 'src/sections/footer.html');
-    }
-</script>
-<body>
+      loadComponents("navbar", "src/sections/navbar.html");
+      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
+      loadComponents("hero", "src/sections/hero.html");
+      loadComponents("contact", "src/sections/contact.html");
+      loadComponents("strategy", "src/sections/strategy.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body class="bg-webGrey">
     <div id="navbar"></div>
-    <!-- <div id="greenNavbar"></div> -->
-    <!-- <div id="hero"></div> -->
+    <div id="hero"></div>
     <!-- <div id="contact"></div> -->
-    <!-- <div id="references"></div>  -->
-    <!-- <div id="footer"></div> -->
-</body>
+    <div id="strategy"></div>
+    <div id="footer"></div>
+  </body>
 </html>
