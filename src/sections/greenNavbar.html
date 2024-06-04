@@ -1,30 +1,52 @@
-<header class="fixed z-[80] flex items-center w-full px-3 py-4 justext-justify-between lg:items-start lg:px-8">
-    <div class="flex flex-col items-start text-green-250">
-        <a href="#">DE</a>
-        <a href="#">EN</a>
+<header
+  class="flex items-center w-full px-3 py-4 justext-justify-between lg:items-start lg:px-8"
+>
+  <div class="flex flex-col items-start text-green-250">
+    <a href="#">DE</a>
+    <a href="#">EN</a>
+  </div>
+  <div
+    class="flex items-center justify-center flex-grow fixed z-[80] lg:left-[45%] md:left-[45%] left-[38%]"
+  >
+    <img
+      src="images/white-vector-shape.svg"
+      class="absolute w-full h-full lg:hidden"
+    />
+    <h1
+      class="relative text-2xl font-bold lg:text-4xl lg:top-0 lg:left text-green-250"
+    >
+      Baumeister
+    </h1>
+  </div>
+  <nav class="fixed z-[80] lg:right-8 right-3">
+    <img
+      src="images/green-menu-icon.svg"
+      id="open-menu"
+      class="cursor-pointer lg:hidden"
+    />
+    <img
+      src="images/green-remove-menu-icon.svg"
+      id="close-menu"
+      class="hidden cursor-pointer lg:hidden"
+    />
+    <div class="hidden lg:block">
+      <ul class="flex flex-col items-end text-green-250">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">References</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-    <div class="relative flex items-center justify-center flex-grow">
-        <img src="images/white-vector-shape.svg" class="absolute w-full h-full lg:hidden">
-        <h1 class="relative text-2xl font-bold lg:text-4xl lg:top-0 lg:left text-green-250">Baumeister</h1>
-    </div>
-    <nav>
-        <img src="images/green-menu-icon.svg" id="open-menu" class="cursor-pointer lg:hidden">
-        <img src="images/green-remove-menu-icon.svg" id="close-menu" class="hidden cursor-pointer lg:hidden">
-        <div class="hidden lg:block">
-            <ul class="flex flex-col items-end text-green-250">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">References</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+  </nav>
 </header>
-<div id="mobile-menu" class="absolute z-[70] hidden w-full h-screen pt-40 bg-gray-150 lg:hidden">
-    <ul class="flex flex-col items-center gap-10 text-green-250">
-        <li><a class="text-3xl font-semibold" href="#">About</a></li>
-        <li><a class="text-3xl font-semibold" href="#">Services</a></li>
-        <li><a class="text-3xl font-semibold" href="#">References</a></li>
-        <li><a class="text-3xl font-semibold" href="#">Contact</a></li>
-    </ul>
+<div
+  id="mobile-menu"
+  class="absolute z-[70] hidden w-full h-screen pt-40 bg-gray-150 lg:hidden"
+>
+  <ul class="flex flex-col items-center gap-10 text-green-250">
+    <li><a class="text-3xl font-semibold" href="#">About</a></li>
+    <li><a class="text-3xl font-semibold" href="#">Services</a></li>
+    <li><a class="text-3xl font-semibold" href="#">References</a></li>
+    <li><a class="text-3xl font-semibold" href="#">Contact</a></li>
+  </ul>
 </div>
