@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <title>Imprint</title>
+
+    <!-- Google Font - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+
+          if (id === "header" || id === "greenNavbar") {
+            const headerContent =
+              id === "header"
+                ? document.getElementById("header")
+                : document.getElementById("greenNavbar");
+            const links = headerContent.children[1];
+            const showMenuBtn =
+              headerContent.children[0].children[2].children[0];
+            const removeMenuBtn = showMenuBtn.nextElementSibling;
+
+            function handleResize() {
+              if (window.innerWidth >= 1024) {
+                // From lg: screen size and beyond, ensure the mobile menu is hidden
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              } else {
+                // Up to lg: screen size
+                showMenuBtn.classList.remove("hidden");
+                removeMenuBtn.classList.add("hidden");
+                links.classList.add("hidden");
+              }
+            }
+
+            handleResize(); // Initial check
+
+            window.addEventListener("resize", handleResize);
+
+            showMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.remove("hidden");
+                showMenuBtn.classList.add("hidden");
+                removeMenuBtn.classList.remove("hidden");
+              }
+            });
+
+            removeMenuBtn.addEventListener("click", () => {
+              if (window.innerWidth <= 1024) {
+                links.classList.add("hidden");
+                removeMenuBtn.classList.add("hidden");
+                showMenuBtn.classList.remove("hidden");
+              }
+            });
+          }
+        });
+    };
+
+    window.onload = () => {
+      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
+      loadComponents("footer", "src/sections/footer.html");
+    };
+  </script>
+  <body class="container">
+    <div id="greenNavbar"></div>
+    <div
+      class="grid grid-cols-1 gap-24 px-3 py-40 md:grid-cols-2 lg:grid-cols-3 md:px-11 lg:px-28 md:gap-x-8"
+    >
+      <div class="flex flex-col gap-10 text-green-250 md:gap-12 lg:col-span-2">
+        <div>
+          <p class="text-2xl font-bold md:text-xl">IMPRINT</p>
+          <h2
+            class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10 font-bold mt-6"
+          >
+            Agentur Baumeister
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            Katrein Baumeister
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            Böckhstraße 13
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            10967 Berlin
+          </h2>
+        </div>
+        <div>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            +49 (0)30 - 490 827 87
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            hallo@agentur-baumeister.com
+          </h2>
+        </div>
+        <div>
+          <h2
+            class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10 font-bold"
+          >
+            UST-IDNR.
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            DE 274 486 923
+          </h2>
+        </div>
+        <div>
+          <h2
+            class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10 font-bold"
+          >
+            REGISTERED OFFICE
+          </h2>
+          <h2 class="text-2xl md:text-[2rem] lg:text-5xl md:leading-10">
+            Berlin, Deutschland
+          </h2>
+        </div>
+      </div>
+      <div
+        class="text-green-250 md:self-end md:w-[82%] lg:w-[18.4rem] md:ml-auto"
+      >
+        <p class="text-2xl font-bold md:text-xl md:text-right">DISCLAIMER</p>
+        <p class="mt-8 text-2xl md:text-xl md:text-right lg:leading-5">
+          Despite all due care, no liability can be accepted for the accuracy,
+          completeness and up-to-dateness of the information provided. The same
+          applies to third-party websites to which www.agentur-baumeister.com
+          refers by means of hyperlinks. Katrein Baumeister, Agentur Baumeister
+          accepts no liability for the content of these websites.
+        </p>
+      </div>
+    </div>
+    <footer id="footer" class="text-green-250"></footer>
+  </body>
+</html>
