@@ -52,14 +52,18 @@
                 links.classList.remove("hidden");
                 showMenuBtn.classList.add("hidden");
                 removeMenuBtn.classList.remove("hidden");
+                document.querySelector('body').classList.add('overflow-y-hidden')
+                document.querySelector('#hero-text').classList.add('hidden')
               }
             });
 
             removeMenuBtn.addEventListener("click", () => {
               if (window.innerWidth <= 1024) {
-                links.classList.add("hidden");
+                links.classList.add("hidden"); 
                 removeMenuBtn.classList.add("hidden");
                 showMenuBtn.classList.remove("hidden");
+                document.querySelector('body').classList.remove('overflow-y-hidden')
+                document.querySelector('#hero-text').classList.remove('hidden')
               }
             });
           }
@@ -119,7 +123,7 @@
     };
   </script>
   <body class="bg-gray-150">
-    <div id="navbar"></div>
+    <div id="navbar" class="sticky top-0 z-[80] "></div>
     <div id="hero"></div>
     <!-- <div id="contact"></div> -->
     <div id="strategy"></div>
