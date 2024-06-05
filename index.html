@@ -52,6 +52,8 @@
                 links.classList.remove("hidden");
                 showMenuBtn.classList.add("hidden");
                 removeMenuBtn.classList.remove("hidden");
+                document.querySelector('body').classList.add('overflow-y-hidden')
+                document.querySelector('#hero-text').classList.add('hidden')
               }
             });
 
@@ -60,6 +62,8 @@
                 links.classList.add("hidden");
                 removeMenuBtn.classList.add("hidden");
                 showMenuBtn.classList.remove("hidden");
+                document.querySelector('body').classList.remove('overflow-y-hidden')
+                document.querySelector('#hero-text').classList.remove('hidden')
               }
             });
           }
