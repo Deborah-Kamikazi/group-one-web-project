@@ -57,7 +57,7 @@
 
             removeMenuBtn.addEventListener("click", () => {
               if (window.innerWidth <= 1024) {
-                links.classList.add("hidden");
+                links.classList.add("hidden"); 
                 removeMenuBtn.classList.add("hidden");
                 showMenuBtn.classList.remove("hidden");
               }
@@ -119,7 +119,7 @@
     };
   </script>
   <body class="bg-gray-150">
-    <div id="navbar"></div>
+    <div id="navbar" class="sticky top-0 z-[80] "></div>
     <div id="hero"></div>
     <!-- <div id="contact"></div> -->
     <div id="strategy"></div>
