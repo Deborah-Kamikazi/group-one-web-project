@@ -14,7 +14,8 @@
       rel="stylesheet"
     />
   </head>
-  <script>
+  <script type="module">
+    import listItems from "./utils/clients.js"
     const loadComponents = (id, url) => {
       fetch(url)
         .then((response) => response.text())
@@ -74,37 +75,7 @@
 
           if (id === "references") {
             const ul = document.getElementById("dynamic-lists");
-            const listItems = [
-              "Ace Hotel",
-              "ARMEDANGELS",
-              "BERLIN DESIGN WEEK",
-              "Berliner Berg",
-              "BITE CLUB",
-              "Budweiser Budvar",
-              "ChungKing Noodles",
-              "Designpreis Brandenburg",
-              "Die Techniker",
-              "European Street Food Awards",
-              "Grundmann Dentistry",
-              "HORNBACH Werkstück",
-              "HORNBACH macht Schule",
-              "iF Design",
-              "Kopka",
-              "KLH Maßschuhe",
-              "Lode & Stijn",
-              "Luya",
-              "MEISSEN",
-              "Motel Beer & Coffee",
-              "PAPER & TEA",
-              "rocket & basil",
-              "Seeberger Gruppe",
-              "Shiori",
-              "SPOC Magazin",
-              "stocubo",
-              "STUR",
-              "World of Coffee",
-              "yamo",
-            ];
+            
 
             listItems.map((item) => {
               const li = document.createElement("li");
