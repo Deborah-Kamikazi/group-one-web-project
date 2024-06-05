@@ -52,18 +52,22 @@
                 links.classList.remove("hidden");
                 showMenuBtn.classList.add("hidden");
                 removeMenuBtn.classList.remove("hidden");
-                document.querySelector('body').classList.add('overflow-y-hidden')
-                document.querySelector('#hero-text').classList.add('hidden')
+                document
+                  .querySelector("body")
+                  .classList.add("overflow-y-hidden");
+                document.querySelector("#hero-text").classList.add("hidden");
               }
             });
 
             removeMenuBtn.addEventListener("click", () => {
               if (window.innerWidth <= 1024) {
-                links.classList.add("hidden"); 
+                links.classList.add("hidden");
                 removeMenuBtn.classList.add("hidden");
                 showMenuBtn.classList.remove("hidden");
-                document.querySelector('body').classList.remove('overflow-y-hidden')
-                document.querySelector('#hero-text').classList.remove('hidden')
+                document
+                  .querySelector("body")
+                  .classList.remove("overflow-y-hidden");
+                document.querySelector("#hero-text").classList.remove("hidden");
               }
             });
           }
@@ -116,6 +120,7 @@
       loadComponents("navbar", "src/sections/navbar.html");
       loadComponents("greenNavbar", "src/sections/greenNavbar.html");
       loadComponents("hero", "src/sections/hero.html");
+      loadComponents("about", "src/sections/about.html");
       loadComponents("contact", "src/sections/contact.html");
       loadComponents("strategy", "src/sections/strategy.html");
       loadComponents("references", "src/sections/references.html");
@@ -123,8 +128,9 @@
     };
   </script>
   <body class="bg-gray-150">
-    <div id="navbar" class="sticky top-0 z-[80] "></div>
+    <div id="navbar" class="sticky top-0 z-[80]"></div>
     <div id="hero"></div>
+    <div id="about"></div>
     <!-- <div id="contact"></div> -->
     <div id="strategy"></div>
     <div id="references"></div>
