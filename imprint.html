@@ -65,6 +65,10 @@
               }
             });
           }
+
+          if (id === "footer" && window.innerWidth <= 393) {
+            document.getElementById("footer-red-shape").style.display = "none";
+          }
         });
     };
 
@@ -74,7 +78,7 @@
       loadComponents("footer", "src/sections/footer.html");
     };
   </script>
-  <body class="container">
+  <body>
     <div id="greenNavbar"></div>
     <div id="imprint"></div>
     <footer id="footer" class="text-green-250"></footer>
