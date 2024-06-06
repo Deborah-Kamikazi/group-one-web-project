@@ -15,7 +15,7 @@
     />
   </head>
   <script type="module">
-    import listItems from "./utils/clients.js"
+    import listItems from "./utils/clients.js";
     const loadComponents = (id, url) => {
       fetch(url)
         .then((response) => response.text())
@@ -61,6 +61,7 @@
             });
 
             removeMenuBtn.addEventListener("click", () => {
+              console.log("The closing button was clicked")
               if (window.innerWidth <= 1024) {
                 links.classList.add("hidden");
                 removeMenuBtn.classList.add("hidden");
@@ -75,7 +76,6 @@
 
           if (id === "references") {
             const ul = document.getElementById("dynamic-lists");
-            
 
             listItems.map((item) => {
               const li = document.createElement("li");
