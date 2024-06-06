@@ -3,6 +3,7 @@
    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css"
   },
+  "type": "module",
   "devDependencies": {
     "tailwindcss": "^3.3.3"
   }

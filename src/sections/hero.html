@@ -1,4 +1,25 @@
-<div>
-    <h1 class="text-7xl">Hero</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-</div>
+<section
+  class="w-full h-[60rem] md:h-[80rem] lg:h-[60rem] mx-auto grid place-items-center justify-center 2xl:container"
+>
+  <!-- style="background-image: url('./images/hero-section-lg.svg')" -->
+  <img
+    class="hidden lg:block"
+    src="./../../images/hero-section-lg.svg"
+    alt="large hero image"
+  />
+  <img
+    class="lg:hidden"
+    src="./images/hero-section-md.svg"
+    alt="medium and small hero image"
+  />
+  <div class="flex items-center justify-center w-full text-gray-150 absolute">
+    <h3
+      class="text-lg w-40 font-medium leading-5 md:leading-8 lg:leading-[3rem] md:text-4xl text-center lg:text-5xl md:w-[18rem] lg:w-[27rem]"
+      id="hero-text"
+    >
+      We help you set focus and gain impact. By adding to the conversation, not
+      to the noise.
+    </h3>
+  </div>
+  <div class="hidden lg:block bg-gray-150 py-20 z-50 pb-11 w-full -mt-24"></div>
+</section>
