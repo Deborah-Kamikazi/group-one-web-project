@@ -21,11 +21,8 @@
         .then((html) => {
           document.getElementById(id).innerHTML = html;
 
-          if (id === "header" || id === "greenNavbar") {
-            const headerContent =
-              id === "header"
-                ? document.getElementById("header")
-                : document.getElementById("greenNavbar");
+          if (id === "green-navbar") {
+            const headerContent = document.getElementById("green-navbar");
             const links = headerContent.children[1];
             const showMenuBtn =
               headerContent.children[0].children[2].children[0];
@@ -33,19 +30,17 @@
 
             function handleResize() {
               if (window.innerWidth >= 1024) {
-                // From lg: screen size and beyond, ensure the mobile menu is hidden
                 showMenuBtn.classList.add("hidden");
                 removeMenuBtn.classList.add("hidden");
                 links.classList.add("hidden");
               } else {
-                // Up to lg: screen size
                 showMenuBtn.classList.remove("hidden");
                 removeMenuBtn.classList.add("hidden");
                 links.classList.add("hidden");
               }
             }
 
-            handleResize(); // Initial check
+            handleResize();
 
             window.addEventListener("resize", handleResize);
 
@@ -73,13 +68,13 @@
     };
 
     window.onload = () => {
-      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
+      loadComponents("green-navbar", "src/sections/greenNavbar.html");
       loadComponents("imprint", "src/sections/imprint.html");
       loadComponents("footer", "src/sections/footer.html");
     };
   </script>
   <body>
-    <div id="greenNavbar"></div>
+    <div id="green-navbar"></div>
     <div id="imprint"></div>
     <footer id="footer" class="text-green-250"></footer>
   </body>

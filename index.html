@@ -15,18 +15,15 @@
     />
   </head>
   <script type="module">
-    import listItems from "./utils/clients.js"
+    import listItems from "./utils/clients.js";
     const loadComponents = (id, url) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
 
-          if (id === "navbar" || id === "greenNavbar") {
-            const headerContent =
-              id === "navbar"
-                ? document.getElementById("navbar")
-                : document.getElementById("greenNavbar");
+          if (id === "navbar") {
+            const headerContent = document.getElementById("navbar");
             const links = headerContent.children[1];
             const showMenuBtn =
               headerContent.children[0].children[2].children[0];
@@ -75,7 +72,6 @@
 
           if (id === "references") {
             const ul = document.getElementById("dynamic-lists");
-            
 
             listItems.map((item) => {
               const li = document.createElement("li");
@@ -89,7 +85,6 @@
 
     window.onload = () => {
       loadComponents("navbar", "src/sections/navbar.html");
-      loadComponents("greenNavbar", "src/sections/greenNavbar.html");
       loadComponents("hero", "src/sections/hero.html");
       loadComponents("about", "src/sections/about.html");
       loadComponents("contact", "src/sections/contact.html");
