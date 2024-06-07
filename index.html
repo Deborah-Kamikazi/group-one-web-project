@@ -57,6 +57,12 @@
                   .querySelector("body")
                   .classList.add("overflow-y-hidden");
                 document.querySelector("#hero-text").classList.add("hidden");
+                document
+                  .querySelector("#hero-space")
+                  .classList.remove("h-[50rem]");
+                document
+                  .querySelector("#hero-space")
+                  .classList.add("h-[65rem]");
               }
             });
 
@@ -69,6 +75,12 @@
                   .querySelector("body")
                   .classList.remove("overflow-y-hidden");
                 document.querySelector("#hero-text").classList.remove("hidden");
+                document
+                  .querySelector("#hero-space")
+                  .classList.remove("h-[65rem]");
+                document
+                  .querySelector("#hero-space")
+                  .classList.add("h-[50rem]");
               }
             });
           }
