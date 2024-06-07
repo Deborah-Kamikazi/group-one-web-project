@@ -32,6 +32,7 @@ https://group-one-web-project-dev.netlify.app/
 - Deborah Kamikazi 
 - Precious Teta
 - Mike Manzi
+- Kellia Umuhire
 - Victor Shyaka Mugisha
 - Honorine Tuyishime
 
