@@ -49,6 +49,9 @@
                 links.classList.remove("hidden");
                 showMenuBtn.classList.add("hidden");
                 removeMenuBtn.classList.remove("hidden");
+                document
+                  .querySelector("body")
+                  .classList.add("overflow-y-hidden");
               }
             });
 
@@ -57,12 +60,16 @@
                 links.classList.add("hidden");
                 removeMenuBtn.classList.add("hidden");
                 showMenuBtn.classList.remove("hidden");
+                document
+                  .querySelector("body")
+                  .classList.remove("overflow-y-hidden");
               }
             });
           }
 
           if (id === "footer" && window.innerWidth <= 393) {
             document.getElementById("footer-red-shape").style.display = "none";
+            document.getElementById("footer-container").classList.remove("pt-40");
           }
         });
     };
@@ -74,7 +81,7 @@
     };
   </script>
   <body>
-    <div id="green-navbar"></div>
+    <div id="green-navbar"  class="sticky top-0 z-[80]"></div>
     <div id="imprint"></div>
     <footer id="footer" class="text-green-250"></footer>
   </body>
