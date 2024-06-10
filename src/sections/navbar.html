@@ -1,0 +1,53 @@
+<header
+  class="container flex items-start justify-between w-full px-5 py-4 pt-10 lg:mb-8 lg:items-start lg:px-8"
+>
+  <div class="flex flex-col items-start">
+    <a href="#">DE</a>
+    <a href="#">EN</a>
+  </div>
+  <div class="relative flex items-center justify-center flex-grow">
+    <img
+      src="images/white-vector-shape.svg"
+      class="absolute w-full h-full md:hidden lg:hidden"
+    />
+    <a
+      href="/"
+      class="relative py-2 text-3xl font-semibold text-center md:p-2 md:font-bold sm:p-2 lg:text-4xl lg:top-0"
+    >
+      Baumeister
+    </a>
+  </div>
+  <nav>
+    <img
+      src="images/menu-icon.svg"
+      id="open-menu"
+      class="mt-4 cursor-pointer lg:hidden"
+    />
+    <img
+      src="images/remove-menu-icon.svg"
+      id="close-menu"
+      class="mt-2 cursor-pointer lg:hidden"
+    />
+    <div class="hidden lg:block">
+      <ul class="flex flex-col items-end">
+        <li><a href="#about">About</a></li>
+        <li><a href="#strategy">Services</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#footer">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div
+  id="mobile-menu"
+  class="absolute hidden w-full h-screen pt-40 -z-10 lg:hidden"
+>
+  <ul
+    class="flex flex-col items-center gap-10 text-green-250 w-full h-screen fixed top-0 pt-40 text-[2rem]"
+  >
+    <li><a class="font-semibold" href="#about">About</a></li>
+    <li><a class="font-semibold" href="#strategy">Services</a></li>
+    <li><a class="font-semibold" href="#references">References</a></li>
+    <li><a class="font-semibold" href="#footer">Contact</a></li>
+  </ul>
+</div>
