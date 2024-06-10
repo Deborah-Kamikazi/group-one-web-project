@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 ## Link to our deployed version: 
-https://group-one-web-project-dev.netlify.app/
+https://group-one-web-project-main.netlify.app/
 
 ## Credit goes to:
 - Deborah Kamikazi 
